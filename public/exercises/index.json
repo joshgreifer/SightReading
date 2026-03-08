@@ -1,0 +1,11 @@
+[
+  {
+    "id": "gymnopedie-1",
+    "title": "Gymnopédie No. 1",
+    "composer": "Erik Satie",
+    "difficulty": 3,
+    "midiFile": "Erik Satie - Gymnopedie No. 1 [Perfect MIDI].mid",
+    "timeSignature": [3, 4],
+    "keySignature": "D major"
+  }
+]

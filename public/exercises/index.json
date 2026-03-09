@@ -3,9 +3,19 @@
     "id": "gymnopedie-1",
     "title": "Gymnopédie No. 1",
     "composer": "Erik Satie",
-    "difficulty": 3,
+    "difficulty": 1,
     "midiFile": "Erik Satie - Gymnopedie No. 1 [Perfect MIDI].mid",
     "timeSignature": [3, 4],
     "keySignature": "D major"
+  },
+  {
+    "id": "fur-elise",
+    "title": "Für Elise",
+    "composer": "Ludwig van Beethoven",
+    "difficulty": 3,
+    "midiFile": "elise.mid",
+    "timeSignature": [3, 4],
+    "keySignature": "A minor"
   }
+
 ]

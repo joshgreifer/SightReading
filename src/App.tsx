@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { loadExerciseById } from "./engine/exerciseLoader";
 import type { Exercise } from "./types/exercise";
-import ScoreCanvas from "./score/ScoreCanvas";
+import ScoreRenderer from "./score/ScoreRenderer.tsx";
+// import ScoreRenderer from "./score/ScoreRenderer";
 
 function App() {
   const [exercise, setExercise] = useState<Exercise | null>(null);
@@ -13,12 +14,11 @@ function App() {
   const startPlayTimeRef = useRef<number>(0);
 
   useEffect(() => {
-    loadExerciseById("fur-elise")
+    loadExerciseById("test")
       .then(setExercise)
       .catch((e) => setError(e.message));
   }, []);
 
-  // Animation loop for playback
   const tick = useCallback(() => {
     const elapsed = (performance.now() - startWallTimeRef.current) / 1000;
     setCurrentTime(startPlayTimeRef.current + elapsed);
@@ -37,7 +37,6 @@ function App() {
     }
   }, [playing, currentTime, tick]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => cancelAnimationFrame(animFrameRef.current);
   }, []);
@@ -48,7 +47,7 @@ function App() {
   return (
     <div
       style={{
-        background: "#1a1a2e",
+        background: "#c6c6ff",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -89,13 +88,12 @@ function App() {
         <span>{currentTime.toFixed(1)}s</span>
       </div>
 
-      <ScoreCanvas
+      <ScoreRenderer
         exercise={exercise}
         currentTime={currentTime}
         playing={playing}
       />
 
-      {/* Time scrubber for manual testing */}
       <div style={{ padding: "12px 20px" }}>
         <input
           type="range"

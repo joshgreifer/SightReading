@@ -16,6 +16,14 @@
     "midiFile": "elise.mid",
     "timeSignature": [3, 4],
     "keySignature": "A minor"
-  }
-
+  },
+  {
+      "id": "test",
+      "title": "Test Exercise",
+      "composer": "Josh Greifer",
+      "difficulty": 1,
+      "midiFile": "test.mid",
+      "timeSignature": [4, 4],
+      "keySignature": "F major"
+    }
 ]
